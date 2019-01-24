@@ -12,39 +12,33 @@ package ca.sheridancollege.week2.softwarefundamentals;
 public class Card {
     private String suit;
     private int value;
-
-    public Card (String s, int v){
-        suit = s;
-        value = v;
-    }
     
-    /**
-     * @return the suit
-     */
+    public Card (String suit, int value){
+        if ((suit.equalsIgnoreCase("Hearts")
+                ||suit.equalsIgnoreCase("Diamonds")
+                ||suit.equalsIgnoreCase("Spades")
+                ||suit.equalsIgnoreCase("Clubs"))&& (value > 0 || value < 14)){
+            this.suit = suit;
+            this.value = value;
+        }
+        else{
+            System.out.println("Card values are invalid");
+        }
+    }
+
     public String getSuit() {
         return suit;
     }
 
-    /**
-     * @param suit the suit to set
-     */
     public void setSuit(String suit) {
         this.suit = suit;
     }
 
-    /**
-     * @return the value
-     */
     public int getValue() {
         return value;
     }
 
-    /**
-     * @param value the value to set
-     */
     public void setValue(int value) {
         this.value = value;
     }
-    
-    
 }
